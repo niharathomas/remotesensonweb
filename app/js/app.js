@@ -2,6 +2,7 @@
 // Declare app level module which depends on filters, and services
 var app= angular.module('myApp', ['ngRoute']);
 app.config(['$routeProvider', function($routeProvider) {
+  $routeProvider.when('/', { templateUrl: 'partials/landing.html', controller: 'landingCtrl' });
   $routeProvider.when('/login', {templateUrl: 'partials/login.html', controller: 'loginCtrl'});
   $routeProvider.when('/home', {templateUrl: 'partials/home.html', controller: 'homeCtrl'});
   $routeProvider.when('/register', {templateUrl: 'partials/register.html', controller: 'registerCtrl'});

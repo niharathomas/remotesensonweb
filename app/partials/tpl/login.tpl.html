@@ -14,6 +14,11 @@
   <button class="btn btn-default" type="submit" ng-click="login(user)" ng-disabled="form1.$invalid">Submit</button>
   <p>{{msgtxt}}</p>
   <br/>
+  <div class="col-xs-6">
+    <button ng-controller="twitterCtrl" ng-click="connectButton()" id="connectButton" type="button" class="btn btn-primary">Connect Twitter</button>
+    <button ng-click="signOut()" id="signOut" type="button" class="btn btn-link" style="display:none;">Twitter Sign Out</button>
+  </div>
+  <br/>
   <a href="#/register" ng-click="">Create an Account</a>
 </form>
 </div>

@@ -2,13 +2,14 @@
 
 /* jasmine specs for controllers go here */
 
-describe('controllers', function(){
-  beforeEach(module('myApp.controllers'));
+describe('loginCtrl', function(){
 
+  it('should login valid users', function() {
+    var scope = {},
+        ctrl = new loginCtrl(scope);
 
-  it('should ....', inject(function() {
-    //spec body
-  }));
+    expect(scope.phones.length).toBe(3);
+  });
 
   it('should ....', inject(function() {
     //spec body
