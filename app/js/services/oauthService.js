@@ -1,4 +1,4 @@
-app.service('oauth', function(OAUTH_PUBLIC_KEY, $q, $http, $rootScope){  
+app.service('oauth', function(OAUTH_PUBLIC_KEY, $q, $http, $window, $rootScope){  
     var authorizationResult = false;
 
     return {
@@ -34,7 +34,13 @@ app.service('oauth', function(OAUTH_PUBLIC_KEY, $q, $http, $rootScope){
                 } else {
                     // shit shit fire ze missiles
                     deferred.reject();
-                    console.error('could not connect to twitter');
+                    $window.location.href = '/remotesensor/app/#/sensors';
+                    // {
+                    //    "oauth_token": "3354456526-6Nv5MDrhgwwKyVqgwFc15RYqJ4sj6FmAyx2z0R3",
+                    //    "oauth_token_secret": "OzSWDM24Rippx8BNIMozQUSAkiFmbttWRIK1kjOejh5jF",
+                    //    "provider": "twitter"
+                    //}'
+                    console.log('"oauth_token": "3354456526-6Nv5MDrhgwwKyVqgwFc15RYqJ4sj6FmAyx2z0R3"');
                     $rootScope.currentUser = false;
                 }
             });
